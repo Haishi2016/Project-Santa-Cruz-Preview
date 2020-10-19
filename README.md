@@ -16,6 +16,14 @@ On this page you will find everything you need to get started using your dev kit
 - [Build a custom solution using Advanced code (Machine Learning Notebooks – Jupyter Notebooks + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/readme.md)
 - [Build a custom solution using Advanced code (VS Code + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/MobileNetV2SSDL_TrainingonVSCodeIDE/readme.md)
 
+## 4. Secure Your Model and Data
+
+* [Setup a secured AI model locker](TBD)
+* [Use Santa Cruz SDK to encrypt/decrypt models](TBD)
+* [Use Santa Cruz SDK in Jupyter notebook](TBD)
+* [Send re-training data to the locker](TBD)
+* [Use Azure Logic Apps to drive re-training pipeline](TBD)
+
 ## Keep your Dev Kits Up To Date
 - [Update over-the-air](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/ota_update.md)
 - [Update via USB](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/usb_updating.md)
