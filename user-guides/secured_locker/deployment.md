@@ -1,16 +1,14 @@
-# Project Santa Cruz Secured AI Model Management
+# Securing your AI model and data
 
-Welcome to Project Santa Cruz Secured AI Model Management (SCZ-SMM). This repository contains documents, sample scenarios and demo instructions for you to evaluate Santa Cruz Secured AI Model Management capabilities.
+Santa Cruz provides AI model protections [at rest](protection-at-rest.md), [during transition](protection-in-transition.md) and [in use](protection-in-use.md). It's designed to work with existing AI systems and workflows such as [Azure Machine Learning]( https://azure.microsoft.com/en-us/services/machine-learning/), [Azure Databricks]( https://azure.microsoft.com/en-us/services/databricks/), and [Azure Cognitive Services]( https://azure.microsoft.com/en-us/services/cognitive-services/). The long-term goal of Santa Cruz is to provide a unified experience across underlying systems. 
 
-SCZ-SMM provides AI model protections [at rest](protection-at-rest.md), [during transition](protection-in-transition.md) and [in use](protection-in-use.md). It's designed to work with existing AI systems and workflows such as [Azure Machine Learning]( https://azure.microsoft.com/en-us/services/machine-learning/), [Azure Databricks]( https://azure.microsoft.com/en-us/services/databricks/), and [Azure Cognitive Services]( https://azure.microsoft.com/en-us/services/cognitive-services/). The long-term goal of SCZ-SMM is to provide a unified experience across underlying systems. 
-
-This repository allows you to evaluate a few SCZ-SMM pieces that will eventually enable the unified experience.This kit contains a server and a Python SDK, as highlighted in the following diagram. The server provides secured key and model management capabilities. In the future the SDK will interact with device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
+The Santa Cruz preview kit is shipped with a secured AI model locker and a Python SDK, as highlighted in the following diagram. The server provides secured key and model management capabilities. In the future the SDK will interact with device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
 
 ![Architecture](./imgs/architecture.png)
 
 
-## Provision a new server
-The Secured Model Management server relies on a number of Azure resources to operate. Please see [server topology](server-topology.md) for more details. We offer the automated scripts to provision your server instance on Azure.  
+## Provision a new secured locker
+A secured AI model locker relies on a number of Azure resources to operate. Please see [server topology](server-topology.md) for more details. We offer the automated scripts to provision your server instance on Azure.  
 
 ### Step 1. Provision server (TODO: change azuredeploy.json file location to the official path)
 
@@ -33,8 +31,7 @@ We offer a PowerShell script for server deployment. To run the script, you need:
    git clone https://github.com/microsoft/Project-Santa-Cruz-Preview.git
    cd Project-Santa-Cruz-Preview
    ```
-2. Launch PowerShell as an Administrator
-   > **NOTE**: we need administrative privilege for key operations while creating the self-signed certificate.
+2. Launch PowerShel
 3. Run the deployment script:
    ```bash
    cd "Sample-Scripts-and-Notebooks/Official/Secured Locker/deployment"
@@ -56,8 +53,35 @@ We offer a PowerShell script for server deployment. To run the script, you need:
    ```
    > **NOTE**: Note down the service principal credential. You'll use it to login to the Santa Cruz server later.
 
-   #### Add TLS certificate in Gateway (TODO)
+### Step 3:  Add TLS certificate to Gateway
 
-   
+A secured AI model locker is deployed with an [Azure Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview) as its entry point. By default, the Gateway is configured to serve an HTTP endpoint only. As we may need to pass decryption key to the client-side containers, you should enable HTTPS on the Application Gateway instance with a proper certificate that has the subject matching with the gateway’s FQDN.
 
-   ## Install Python SDK (TODO)
+We offer a ```config_certificate.ps1``` PowerShell script to assist you to configure the certificate. If you don't have a certificate, the script generates a self-signed certificate (for testing purposes only). You'll need ```openssl``` to generate the certificate.
+
+>NOTE: The easiest way to get ```openssl``` on Windows 10 is to install Git Bash, which comes with ```openssl``` under folder ```c:\Program Files\Git\usr\bin```. Our script assume you've added openssl to your PATH variable.
+
+1. Launch PowerShell as an Administrator
+   > **NOTE**: we need administrative privilege for key operations while creating the self-signed certificate.
+2. Run the update script:
+   ```ps
+   .\config_certificate.ps1 -subscription <Azure subscription name or id> -prefix <Azure Key Vault instance name generated by provision step> -resourceGroup <resource group of your deployment> -location <location of your deployment>
+   ```
+   >**NOTE**: Make sure ```location```, ```resourceGroup```, ```subscription``` and ```prefix``` match with your earlier settings.
+
+   For example, the following command updates your locker deployment with a self-signed certificate.
+   ```
+   .\config_certificate.ps1 -subscription my-subscription -prefix scz-mm1  -resourceGroup scz-mm -location westus2
+   ```
+
+   To use your own certificate, run the script with a ```certFile``` parameter pointing to your ```.pfx``` file and ```certPassword``` parameter with your private key password. For example:
+
+   ```ps
+   .\config_certificate.ps1 -subscription my-subscription -prefix scz-mm1  -resourceGroup scz-mm  -location westus2 -certFile .\appgwcert.pfx -certPassword abc
+   ```
+
+3. When prompted (only when you use auto-generated certificate), enter a password for your certificate private key.
+
+Once the script is complete, your Application Gateway will be configured to use HTTPS (via port 443) instead of HTTP (via port 5000).
+
+### Step 4: Install Python SDK (TBD)
