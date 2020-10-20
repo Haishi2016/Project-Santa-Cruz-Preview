@@ -1,0 +1,126 @@
+{
+  "modulesContent": {
+    "$edgeAgent": {
+      "properties.desired": {
+        "modules": {
+          "WebStreamModule": {
+            "settings": {
+              "image": "azureedgedevices.azurecr.io/webstreammodule:preload-devkit",
+              "createOptions": "{\"ExposedPorts\":{\"3000/tcp\":{},\"3002/tcp\":{}},\"HostConfig\":{\"PortBindings\":{\"3000/tcp\":[{\"HostPort\":\"3000\"}],\"3002/tcp\":[{\"HostPort\":\"3002\"}]}}}"
+            },
+            "type": "docker",
+            "version": "1.0",
+            "env": {
+              "RTSP_IP": {
+                "value": "azureeyemodule"
+              },
+              "RTSP_PORT": {
+                "value": "8554"
+              },
+              "RTSP_PATH": {
+                "value": "result"
+              }
+            },
+            "status": "running",
+            "restartPolicy": "always"
+          },
+          "azureeyemodule": {
+            "settings": {
+              "image": "$CONTAINER_IMAGE_LOCATION",
+              "createOptions": "{\"ExposedPorts\":{\"8554/tcp\":{}},\"HostConfig\":{\"Binds\":[\"/dev/bus/usb:/dev/bus/usb\"],\"Privileged\":true,\"DeviceCgroupRules\":[\"c 189:* rmw\"],\"PortBindings\":{\"8554/tcp\":[{\"HostPort\":\"8554\"}]}}}"
+            },
+            "type": "docker",
+            "version": "1.0",
+            "status": "running",
+            "restartPolicy": "always",
+            "env": {
+              "AZURE_CLIENT_ID": {
+                "value": "$AZURE_CLIENT_ID"
+              },
+              "AZURE_CLIENT_SECRET": {
+                "value": "$AZURE_CLIENT_SECRET"
+              },
+              "AZURE_TENANT_ID": {
+                "value": "$AZURE_TENANT_ID"
+              },
+              "CONFIDENCE_THRESHOLD": {
+                "value": "$CONFIDENCE_THRESHOLD"
+              }
+            }
+          }
+        },
+        "runtime": {
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "registryCredentials": {
+              "azureedgedevices": {
+                "address": "azureedgedevices.azurecr.io",
+                "password": "wq7=cdwBX1X9l/wSNwFpRblS6+YP2NzZ",
+                "username": "devkitprivatepreviewpull"
+              }
+            }
+          },
+          "type": "docker"
+        },
+        "schemaVersion": "1.0",
+        "systemModules": {
+          "edgeAgent": {
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+              "createOptions": "{}"
+            },
+            "type": "docker",
+            "env": {
+              "BackupConfigFilePath": {
+                "value": "/tmp/edgeAgent/backup.json"
+              }
+            }
+          },
+          "edgeHub": {
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
+            },
+            "type": "docker",
+            "env": {
+              "OptimizeForPerformance": {
+                "value": "False"
+              },
+              "mqttSettings__ThreadCount": {
+                "value": "4"
+              }
+            },
+            "status": "running",
+            "restartPolicy": "always"
+          }
+        }
+      }
+    },
+    "$edgeHub": {
+      "properties.desired": {
+        "routes": {
+          "AzureEyeModuleToIoTHub": "FROM /messages/modules/azureeyemodule/outputs/* INTO $upstream"
+        },
+        "schemaVersion": "1.0",
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 7200
+        }
+      }
+    },
+    "WebStreamModule": {
+      "properties.desired": {}
+    },
+    "azureeyemodule": {
+      "properties.desired": {
+        "ModelZipUrl": "",
+        "Running": true,
+        "Logging": false,
+        "DataExport": true,
+        "DataExportInterval": 60,
+        "SCZ_MODEL_NAME": "$SCZ_MODEL_NAME",
+        "SCZ_MODEL_VERSION": "$SCZ_MODEL_VERSION",
+        "SCZ_MM_SERVER_URL": "$SCZ_MM_SERVER_URL"
+      }
+    }
+  }
+}
