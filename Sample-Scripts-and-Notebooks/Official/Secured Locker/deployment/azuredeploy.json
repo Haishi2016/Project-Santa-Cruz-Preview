@@ -282,7 +282,7 @@
                     {
                         "name": "[variables('container_group')]",
                         "properties": {
-                            "image": "hbai/scz-mm:v11",
+                            "image": "devazureedgedevices.azurecr.io/scz-mm:preview",
                             "ports": [
                                 {
                                     "protocol": "TCP",
@@ -311,6 +311,13 @@
                             }
                         }
                     }
+                ],
+                "imageRegistryCredentials": [
+                {
+                    "server": "devazureedgedevices.azurecr.io",
+                    "username": "internalpull",
+                    "password": "ktzvl+HNCvws6MoD4oxTvedIoLxY5xDX"
+                }
                 ],
                 "initContainers": [],
                 "restartPolicy": "Always",
