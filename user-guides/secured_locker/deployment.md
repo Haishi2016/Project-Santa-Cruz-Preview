@@ -11,8 +11,21 @@ The Santa Cruz preview kit is shipped with a secured AI model locker and a Pytho
 A secured AI model locker relies on a number of Azure resources to operate. Please see [server topology](server-topology.md) for more details. We offer the automated scripts to provision your server instance on Azure.  
 
 ### Step 1. Provision server (TODO: change azuredeploy.json file location to the official path)
-
+Press this button to deploy Santa Cruz AI Model and Sensor Data Protection solution to your Azure public cloud 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
+
+This will redirect you to the Azure portal with this deployment page
+![Deployment Template Page 1](./imgs/sczmm-deploy-template.PNG.png)
+
+To deploy solution in the cloud, please enter the following parameters:
+
+Subscription = The subscription in which to create the solution
+Resource Group = Unique name of a new resource group to host Santa Cruz AI Model and Sensor Data Protection solution components
+
+Parameters
+Region = Azure region in which solution will be deployed
+Location = Location within the region 
+Locker_prefix = Prefix to attach to new resource names
 
 ### Step 2: Update deployment using PowerShell script
 
@@ -31,7 +44,7 @@ We offer a PowerShell script for server deployment. To run the script, you need:
    git clone https://github.com/microsoft/Project-Santa-Cruz-Preview.git
    cd Project-Santa-Cruz-Preview
    ```
-2. Launch PowerShel
+2. Launch PowerShell
 3. Run the deployment script:
    ```
    cd "Sample-Scripts-and-Notebooks/Official/Secured Locker/deployment"
