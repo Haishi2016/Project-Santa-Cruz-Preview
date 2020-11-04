@@ -23,8 +23,11 @@ Subscription = The subscription in which to create the solution
 Resource Group = Unique name of a new resource group to host Santa Cruz AI Model and Sensor Data Protection solution components
 
 Parameters
+
 Region = Azure region in which solution will be deployed
+
 Location = Location within the region 
+
 Locker_prefix = Prefix to attach to new resource names
 
 ### Step 2: Update deployment using PowerShell script
