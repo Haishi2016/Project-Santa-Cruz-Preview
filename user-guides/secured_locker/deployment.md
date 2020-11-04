@@ -15,7 +15,7 @@ Press this button to deploy Santa Cruz AI Model and Sensor Data Protection solut
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
 
 This will redirect you to the Azure portal with this deployment page
-![Deployment Template Page 1](./imgs/sczmm-deploy-template.PNG.png)
+![Deployment Template Page 1](./imgs/sczmm-deploy-template.PNG)
 
 To deploy solution in the cloud, please enter the following parameters:
 
