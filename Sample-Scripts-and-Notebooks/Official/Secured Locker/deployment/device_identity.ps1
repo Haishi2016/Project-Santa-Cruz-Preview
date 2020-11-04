@@ -34,9 +34,9 @@ function New-ServicePrincipal {
 
 function Write-Summary {
     Write-Host "`n Santa Cruz Secred Model Management server is provisioned at: ", $global:service_endpoint -ForegroundColor Cyan
-    Write-Host " Service Princiapl Client ID:     ", $global:sp_app_id -ForegroundColor Cyan
-    Write-Host " Service Princiapl Tenant ID:     ", $global:sp_tenant -ForegroundColor Cyan
-    Write-Host " Service Princiapl Client Secret: ", $global:sp_secret -ForegroundColor Cyan
+    Write-Host " Service Principal Client ID:     ", $global:sp_app_id -ForegroundColor Cyan
+    Write-Host " Service Principal Tenant ID:     ", $global:sp_tenant -ForegroundColor Cyan
+    Write-Host " Service Principal Client Secret: ", $global:sp_secret -ForegroundColor Cyan
 }
 
 function New-DevicePrincipal {
