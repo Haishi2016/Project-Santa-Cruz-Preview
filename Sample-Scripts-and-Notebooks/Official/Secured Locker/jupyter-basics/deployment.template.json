@@ -26,7 +26,7 @@
           },
           "azureeyemodule": {
             "settings": {
-              "image": "$CONTAINER_IMAGE_LOCATION",
+              "image": "devazureedgedevices.azurecr.io/securedazureeyemodule:latest-arm64v8",
               "createOptions": "{\"ExposedPorts\":{\"8554/tcp\":{}},\"HostConfig\":{\"Binds\":[\"/dev/bus/usb:/dev/bus/usb\"],\"Privileged\":true,\"DeviceCgroupRules\":[\"c 189:* rmw\"],\"PortBindings\":{\"8554/tcp\":[{\"HostPort\":\"8554\"}]}}}"
             },
             "type": "docker",
@@ -53,11 +53,16 @@
           "settings": {
             "minDockerVersion": "v1.25",
             "registryCredentials": {
-              "azureedgedevices": {
+              "devazureedgedevices": {
+                "address": "devazureedgedevices.azurecr.io",
+                "password": "ktzvl+HNCvws6MoD4oxTvedIoLxY5xDX",
+                "username": "internalpull"
+            },
+            "azureedgedevices": {
                 "address": "azureedgedevices.azurecr.io",
                 "password": "wq7=cdwBX1X9l/wSNwFpRblS6+YP2NzZ",
                 "username": "devkitprivatepreviewpull"
-              }
+            }
             }
           },
           "type": "docker"
@@ -115,11 +120,12 @@
         "ModelZipUrl": "",
         "Running": true,
         "Logging": false,
-        "DataExport": true,
-        "DataExportInterval": 60,
+        "SecureAILifecycleEnabled": true, 
         "SCZ_MODEL_NAME": "$SCZ_MODEL_NAME",
         "SCZ_MODEL_VERSION": "$SCZ_MODEL_VERSION",
-        "SCZ_MM_SERVER_URL": "$SCZ_MM_SERVER_URL"
+        "SCZ_MM_SERVER_URL": "$SCZ_MM_SERVER_URL",
+        "RetrainingDataCollectionEnabled": false,
+        "RetrainingDataCollectionInterval": 60
       }
     }
   }
