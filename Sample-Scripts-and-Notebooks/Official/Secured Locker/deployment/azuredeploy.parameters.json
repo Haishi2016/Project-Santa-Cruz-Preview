@@ -5,7 +5,7 @@
         "location": {
             "value": null
         },
-        "vault_prefix": {
+        "locker_prefix": {
             "value": null
         }
     }

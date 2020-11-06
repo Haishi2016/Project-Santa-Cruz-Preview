@@ -6,20 +6,20 @@
             "defaultValue": "westus2",
             "type": "string"
         },
-        "vault_prefix": {
+        "locker_prefix": {
             "type": "string"
         }
     },
     "variables": {
-        "vault_name": "[concat(parameters('vault_prefix'), '-kv')]",
-        "public_ip_name": "[concat(parameters('vault_prefix'), '-ip')]",
-        "domain_label": "[parameters('vault_prefix')]",
-        "vnet_name": "[concat(parameters('vault_prefix'), '-vnet')]",
-        "storage_account": "[concat(replace(parameters('vault_prefix'), '-', ''), 'models')]",
-        "network_profile": "[concat(parameters('vault_prefix'), '-profile')]",
-        "container_group": "[concat(parameters('vault_prefix'), '-cg')]",
-        "gateway_name": "[concat(parameters('vault_prefix'), '-gateway')]",
-        "msi_name": "[concat(parameters('vault_prefix'), '-msi')]",
+        "vault_name": "[concat(parameters('locker_prefix'), '-kv')]",
+        "public_ip_name": "[concat(parameters('locker_prefix'), '-ip')]",
+        "domain_label": "[parameters('locker_prefix')]",
+        "vnet_name": "[concat(parameters('locker_prefix'), '-vnet')]",
+        "storage_account": "[concat(replace(parameters('locker_prefix'), '-', ''), 'models')]",
+        "network_profile": "[concat(parameters('locker_prefix'), '-profile')]",
+        "container_group": "[concat(parameters('locker_prefix'), '-cg')]",
+        "gateway_name": "[concat(parameters('locker_prefix'), '-gateway')]",
+        "msi_name": "[concat(parameters('locker_prefix'), '-msi')]",
         "secret_obj": "tokenholder$123",
         "identityID": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('msi_name'))]",
         "Contributor": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
