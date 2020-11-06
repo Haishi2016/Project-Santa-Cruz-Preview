@@ -4,7 +4,7 @@ Protecting AI models in use from vogue administrators and hackers is a challengi
 
 ## Prevent unauthorized usages
 
-Please see how SCZ-SMM uses [Authentication](TBD), [Authorization](TBD) and [Attestation](TBD) to avoid unauthorized usages. SMM also supports device attestation based on secrets stored in TPM to establish hardware root of trust, so that the AI models can only be decrypted and used by legit, untampered devices.
+Please see how SCZ-SMM uses [Authentication](TBD), [Authorization](TBD) and [Attestation](TBD) to avoid unauthorized usages. SMM also supports device attestation based on secrets stored in TPM to establish hardware root of trust, so that the AI models can only be decrypted and used by legitimate, untampered devices. The attestation features will be updated in a future version of the SantaCruz Secure AI Lifecycle SDK.
 
 ## Private AI Model algorithms
 
