@@ -12,6 +12,7 @@ A secured AI model locker relies on a number of Azure resources to operate. Plea
 
 ### Step 1. Provision SantaCruz AI/ML model and sensor data protection solution (TODO: change azuredeploy.json file location to the official path)
 Press this button to deploy SantaCruz AI/ML model and sensor data protection solution to your Azure public cloud 
+
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
 
 This will redirect you to the Azure portal with this deployment page
