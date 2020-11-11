@@ -20,18 +20,19 @@ This will redirect you to the Azure portal with this deployment page
 
 To deploy solution in the cloud, enter the following parameters and click Review + Create:
 
-Subscription = The subscription in which to create the solution
-Resource Group = Unique name of a new resource group to host SantaCruz AI/ML model and sensor data protection solution solution components
+<strong>Subscription</strong> = The subscription in which to create the solution
+
+<strong>Resource Group</strong> = Unique name of a new resource group to host SantaCruz AI/ML model and sensor data protection solution solution components
 
 Parameters
 
-Region = Azure region in which solution will be deployed
+<strong>Region</strong> = Azure region in which solution will be deployed
 
-Location = Location within the region 
+<strong>Location</strong> = Location within the region 
 
-Locker_prefix = Prefix to attach to new resource names
+<strong>Locker_prefix</strong> = Prefix to attach to new resource names
 
-On the next page, click Create after agreeing to the terms and conditions.
+On the next page, click <strong>Create</strong> after agreeing to the terms and conditions.
 ![Deployment Template Page 2](./imgs/sczmm-deploy-template2.PNG)
 
 The deployment may take several minutes to complete and should result in creation of Azure resources within the specified resource group.
@@ -109,3 +110,9 @@ The SantaCruz Secure AI solution offers a ```config_certificate.ps1``` PowerShel
 Once the script is complete, your Application Gateway will be configured to use HTTPS (via port 443) instead of HTTP (via port 5000).
 
 ### Step 4: Install Python SDK (TBD)
+
+### Step 5: Clean Up Resources
+
+1. Other Santacruz Secure AI Lifecycle features build upon this quickstart. If you plan to continue on to work with subsequent quickstarts and tutorials, you may wish to leave these resources in place.
+
+Please ensure you have decrypted any data or ai/ml models prior to deletion. When no longer needed, delete the resource group, which deletes the SantaCruz Secure AI Lifecycle solution components. 
