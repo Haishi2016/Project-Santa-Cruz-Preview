@@ -32,7 +32,6 @@ This Notebook deploys Azure Eye container to Santa Cruz Devkit devices for secur
     subscription_id="9934..."
     iot_hub_name="MyIotHub"
     iot_device_id="devkit..."
-    container_image_location="azureedgedevices.azurecr.io/securedazureeyemodule:latest-arm64v8"
     azure_client_id="555d..."
     azure_client_secret="6da3..."
     azure_tenent_id="72f9..."
@@ -44,6 +43,6 @@ This Notebook deploys Azure Eye container to Santa Cruz Devkit devices for secur
 
 2.	Run all cells in the Notebook.
 
-3.  The notebook pops up a web browser for you to log in to your Azure subscription. Login to your Azure account to continue.
+3.  The Notebook pops up a web browser for you to log in to your Azure subscription. Login to your Azure account to continue.
 
-4.  You will see the Azure Eye container deployment result after the execution completes, and you will see the container named "securedazureeyemodule" running on the Santa Cruz DevKit.
+4.  You will see the Azure Eye container deployment result after the execution completes, and you will see the container named "azureeyemodule" running on the Santa Cruz DevKit.
