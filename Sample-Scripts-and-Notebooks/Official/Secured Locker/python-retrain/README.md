@@ -7,7 +7,7 @@ SCZ-SMM SDK provides two OpenTelemetry exporters - ```SCZSpanExporter``` and ```
 Once the data is uploaded to data repository, you can use services such as [Azure Logic Apps]( https://azure.microsoft.com/en-us/services/logic-apps/) to pick up the data and trigger the retraining pipeline, as shown in [this sample]( https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline).
 
 > **NOTE:** At the time of writing, the triggering policy is fixed to fire if:
-> * a traced evened named ```inference```
+> * a traced event named ```inference```
 > * The event has a property named ```confidence``` that is lower than 90 percent
 > * The event has associated ```model_name```, ```model_version``` attributes
 > * The event has an associcated ```file_ref``` attribute. This is the file to be uploaded
