@@ -1,4 +1,4 @@
-# AI Model Protection in Transition
+# AI Model Protection in Transit
 
 SCZ-SMM transfers AI models and secret keys over TLS channel, once the client has successfully authenticated. 
 
