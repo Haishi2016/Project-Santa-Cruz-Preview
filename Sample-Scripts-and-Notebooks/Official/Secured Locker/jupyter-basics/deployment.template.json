@@ -24,6 +24,26 @@
             "status": "running",
             "restartPolicy": "always"
           },
+          "devmmclientmodule": {
+            "settings": {
+              "image": "azureedgedevices.azurecr.io/devmmclientmodule:preload-devkit",
+              "createOptions": "{\"HostConfig\":{\"Privileged\":true,\"Binds\":[\"/dev:/dev\"]}}"
+            },
+            "type": "docker",
+            "version": "1.0",
+            "status": "running",
+            "restartPolicy": "always"
+          },
+          "azureearspeechclientmodule": {
+            "settings": {
+              "image": "azureedgedevices.azurecr.io/azureearspeechclientmodule:preload-devkit",
+              "createOptions": "{\"HostConfig\":{\"Privileged\":true,\"Binds\":[\"/dev:/dev\"]}}"
+            },
+            "type": "docker",
+            "version": "1.0",
+            "status": "running",
+            "restartPolicy": "always"
+          },
           "azureeyemodule": {
             "settings": {
               "image": "devazureedgedevices.azurecr.io/securedazureeyemodule:latest-arm64v8",
@@ -84,7 +104,7 @@
           "edgeHub": {
             "settings": {
               "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
-              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
+              "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
             },
             "type": "docker",
             "env": {
@@ -104,7 +124,8 @@
     "$edgeHub": {
       "properties.desired": {
         "routes": {
-          "AzureEyeModuleToIoTHub": "FROM /messages/modules/azureeyemodule/outputs/* INTO $upstream"
+          "AzureEyeModuleToIoTHub": "FROM /messages/modules/azureeyemodule/outputs/* INTO $upstream",
+          "AzureSpeechToIoTHub": "FROM /messages/modules/azureearspeechclientmodule/outputs/* INTO $upstream"
         },
         "schemaVersion": "1.0",
         "storeAndForwardConfiguration": {
@@ -115,11 +136,34 @@
     "WebStreamModule": {
       "properties.desired": {}
     },
+    "devmmclientmodule": {
+      "properties.desired": {}
+    },
+    "azureearspeechclientmodule": {
+      "properties.desired": {
+        "speechConfigs": {
+          "appId": "",
+          "key": "",
+          "region": "",
+          "keywordModelUrl": "https://aedspeechscenarios.blob.core.windows.net/keyword-tables/computer.table",
+          "keyword": "computer",
+          "skillType": "xxx",
+          "speechLogFile": "speech.log"
+        },
+        "deviceConfigs": {
+          "volume": 45,
+          "enableSendAppLog": false
+        }
+      }
+    },
     "azureeyemodule": {
       "properties.desired": {
+        "Logging": true,
         "ModelZipUrl": "",
+        "RawStream": true,
+        "ResultStream": true,
         "Running": true,
-        "Logging": false,
+        "TelemetryInterval": 10,
         "SecureAILifecycleEnabled": true, 
         "SCZ_MODEL_NAME": "$SCZ_MODEL_NAME",
         "SCZ_MODEL_VERSION": "$SCZ_MODEL_VERSION",
