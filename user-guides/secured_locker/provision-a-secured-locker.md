@@ -2,9 +2,9 @@
 
 A secured AI model locker relies on a number of Azure resources to operate (please see [server topology](server-topology.md) for more details). To provision your server instance on Azure, follow the steps outlined below.  
 
-## Step 1. Provision SantaCruz AI/ML model and sensor data protection solution (TODO: change azuredeploy.json file location to the official path)
+## Step 1. Provision Azure Percept AI/ML model and sensor data protection solution (TODO: change azuredeploy.json file location to the official path)
 
-1. Press this button to deploy the SantaCruz AI/ML model and sensor data protection solution to your Azure public cloud:
+1. Press this button to deploy the Azure Percept AI/ML model and sensor data protection solution to your Azure public cloud:
 
     [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
 
@@ -16,7 +16,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
     - <strong>Subscription</strong>: the subscription in which to create the solution.
 
-    - <strong>Resource Group</strong>: unique name of a new resource group to host the Santa Cruz AI/ML model and sensor data protection solution components.
+    - <strong>Resource Group</strong>: unique name of a new resource group to host the Azure Percept AI/ML model and sensor data protection solution components.
 
     - <strong>Region</strong>: Azure region in which the solution will be deployed.
 
@@ -44,7 +44,7 @@ We offer a PowerShell script for server deployment. To run the script, you must 
 
 ### Update server access
 
-1. Open Git Bash and enter the following to clone the Project Santa Cruz GitHub repository:
+1. Open Git Bash and enter the following to clone the Project Azure Percept GitHub repository:
 
     ```
    git clone https://github.com/microsoft/Project-Santa-Cruz-Preview.git
@@ -72,19 +72,19 @@ We offer a PowerShell script for server deployment. To run the script, you must 
 1. Once the script finishes, it will output the service principal that has been granted access to the Azure Key Vault service:
 
    ```
-   Santa Cruz Secred Model Management server is provisioned at:  ...
+   Azure Percept secure AI/ML model management server is provisioned at:  ...
    Service Principal Client ID:     3f38...
    Service Principal Tenant ID:     72f9...
    Service Principal Client Secret: bf49...
    ```
 
-    > **NOTE**: Write down the service principal credentials (Client ID, Tenant ID, Client Secret). You'll use it to log in to the Santa Cruz server later.
+    > **NOTE**: Write down the service principal credentials (Client ID, Tenant ID, Client Secret). You'll use it to log in to the Azure Percept server later.
 
 ## Step 3: Add TLS certificate to gateway
 
 A secured AI model locker is deployed with an [Azure Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview) as its entry point. By default, the gateway is configured to serve an HTTP endpoint only. As we may need to pass the decryption key to the client-side containers, you should enable HTTPS on the Application Gateway instance with a proper certificate that has the subject matching with the gateway’s FQDN.
 
-The SantaCruz Secure AI solution offers a ```config_certificate.ps1``` PowerShell script to assist you with configuring the certificate. If you don't have a certificate, the script generates a self-signed certificate (for testing purposes only). You'll need ```openssl``` to generate the certificate.
+The Azure Percept Secure AI solution offers a ```config_certificate.ps1``` PowerShell script to assist you with configuring the certificate. If you don't have a certificate, the script generates a self-signed certificate (for testing purposes only). You'll need ```openssl``` to generate the certificate.
 
 >**NOTE**: The easiest way to get ```openssl``` on Windows 10 is to install [Git Bash](https://git-scm.com/downloads), which comes with ```openssl``` under folder ```c:\Program Files\Git\usr\bin```. The script assumes you've added openssl to your PATH variable.
 
@@ -122,6 +122,6 @@ The SantaCruz Secure AI solution offers a ```config_certificate.ps1``` PowerShel
 
 ## Step 5: Clean up resources
 
-Other Santa Cruz Secure AI Lifecycle features build upon this quickstart. If you plan to continue with subsequent quickstarts and tutorials, you may wish to leave these resources in place.
+Other Azure Percept Secure AI Lifecycle features build upon this quickstart. If you plan to continue with subsequent quickstarts and tutorials, you may wish to leave these resources in place.
 
-When you are ready to clean up resources, please ensure you have decrypted any data and/or AI/ML models prior to deletion. Afterward, delete the resource group, which deletes the Santa Cruz Secure AI Lifecycle solution components.
+When you are ready to clean up resources, please ensure you have decrypted any data and/or AI/ML models prior to deletion. Afterward, delete the resource group, which deletes the Azure Percept Secure AI Lifecycle solution components.

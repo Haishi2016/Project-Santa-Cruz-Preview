@@ -37,7 +37,7 @@ function New-ServicePrincipal {
 }
 
 function Write-Summary {
-    Write-Host "`n Santa Cruz Secure AI/ML model management server is provisioned at: ", $global:service_endpoint -ForegroundColor Cyan
+    Write-Host "`n Azure Percept secure AI/ML model management server is provisioned at: ", $global:service_endpoint -ForegroundColor Cyan
     Write-Host " Service Principal Client ID:     ", $global:sp_app_id -ForegroundColor Cyan
     Write-Host " Service Principal Tenant ID:     ", $global:sp_tenant -ForegroundColor Cyan
     Write-Host " Service Principal Client Secret: ", $global:sp_secret -ForegroundColor Cyan

@@ -1,6 +1,6 @@
 # Using Azure Functions to decrypt and send retraining data to a Custom Vision project for retraining
 
-This sample demonstrates how to create an Azure Function to decrypt the SCZ-SMM retraining data and upload it to a Custom Vision project for model retraining. 
+This sample demonstrates how to create an Azure Function to decrypt the Azure-Percept-SMM retraining data and upload it to a Custom Vision project for model retraining. 
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ To run the sample, you need:
 * Language : Python
 * Python interpreter: Python 3.6.x, 3.7.x 3.8.x are supported
 * Template: Azure Blob Storage trigger
-* Select a storage account: choose your SCZ-MM service storage account (i.e. sczmm1models)
+* Select a storage account: choose your Azure-Percept-SMM service storage account (i.e. mymmmodels)
 * Blob storage path to be monitored: data
 
 ## 2. Add the following environment variables in local.settings.json with proper settings:
@@ -23,11 +23,11 @@ To run the sample, you need:
 "AZURE_CLIENT_ID": "", 
 "AZURE_CLIENT_SECRET": "",
 "AZURE_TENANT_ID": "",
-"scz_mm_server_url": "",
-"scz_mm_storage_account": "",
-"scz_mm_telemtry_storage_container": "data",
-"scz_mm_model_name": "",
-"scz_mm_model_version": "",
+"mm_server_url": "",
+"mm_storage_account": "",
+"mm_telemtry_storage_container": "data",
+"mm_model_name": "",
+"mm_model_version": "",
 "custom_vision_endpoint": "",
 "custom_vision_training_key": "",
 "custom_vision_project_id": ""
@@ -37,16 +37,16 @@ For example:
 "AZURE_CLIENT_ID": "33e5...",
 "AZURE_CLIENT_SECRET": "c383...",
 "AZURE_TENANT_ID": "72f9...",
-"scz_mm_server_url": "https://scz-mm.westus2.cloudapp.azure.com",
-"scz_mm_storage_account": "sczmmmodels",
-"scz_mm_telemtry_storage_container": "data",
-"scz_mm_model_name": "person-detection-retail",
-"scz_mm_model_version": "0013",
+"mm_server_url": "https://my-mm.westus2.cloudapp.azure.com",
+"mm_storage_account": "mymmmodels",
+"mm_telemtry_storage_container": "data",
+"mm_model_name": "person-detection-retail",
+"mm_model_version": "0013",
 "custom_vision_endpoint": "https://cvdemo.cognitiveservices.azure.com/",
 "custom_vision_training_key": "4240...",
 "custom_vision_project_id": "2253..."
 ```
-## 3. Grant the Service Principal as "Storage Blob Data Reader" in SCZ-MM storage account (defined as "scz_mm_storage_account").   
+## 3. Grant the Service Principal as "Storage Blob Data Reader" in Azure-Percept-SMM storage account (defined as "mm_storage_account").   
 
 ## 4. Add the following dependencies in requirements.txt:
 ```
@@ -74,11 +74,11 @@ import azure.functions as func
 import sczpy
 
 # Secure locker config
-server_url = os.environ["scz_mm_server_url"]
-model_name = os.environ["scz_mm_model_name"]
-model_version = os.environ["scz_mm_model_version"]
-storage_name = os.environ["scz_mm_storage_account"]
-storage_container = os.environ["scz_mm_telemtry_storage_container"]
+server_url = os.environ["mm_server_url"]
+model_name = os.environ["mm_model_name"]
+model_version = os.environ["mm_model_version"]
+storage_name = os.environ["mm_storage_account"]
+storage_container = os.environ["mm_telemtry_storage_container"]
 storage_url = f"https://{storage_name}.blob.core.windows.net"
 
 # Custom vision project config
@@ -92,7 +92,7 @@ if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 
 logging.info(f"Initialize sczpy client.")
-scz_client = sczpy.SCZClient(server_url)
+client = sczpy.SCZClient(server_url)
 
 logging.info(f"Initialize custom vision project.")
 credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
@@ -119,7 +119,7 @@ def main(myblob: func.InputStream):
             download_stream = storage_client.download_blob()
             encypted_data.write(download_stream.readall())
             # Decrpt data
-            scz_client.decrypt(model_name, model_version, download_file, decrypted_file)
+            client.decrypt(model_name, model_version, download_file, decrypted_file)
         
         with open(decrypted_file, "rb") as image_contents:
             image_list.append(ImageFileCreateEntry(name=blob_name, contents=image_contents.read()))
@@ -137,6 +137,6 @@ def main(myblob: func.InputStream):
         os.remove(decrypted_file)   
 ```
 
-## 7. Debug the project locally to make sure the retraining data can be fetched from the SCZ-MM storage blob, decrypted and uploaded to Custom Vision project as "Untagged" images.
+## 7. Debug the project locally to make sure the retraining data can be fetched from the Azure-Percept-SMM storage blob, decrypted and uploaded to Custom Vision project as "Untagged" images.
 
 ## 8. Deploy the project to your Azure subscription and upload the local settings to cloud.
