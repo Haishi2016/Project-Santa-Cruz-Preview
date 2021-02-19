@@ -10,7 +10,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
     The button will redirect you to the **Custom deployment** page in the Azure portal:
 
-    ![Deployment Template Page 1](./imgs/sczmm-deploy-template1.PNG)
+    ![Deployment Template Page 1](./imgs/locker-deploy-template1.PNG)
 
 1. To deploy the solution in the cloud, enter the following parameters and click **Review + create**:
 
@@ -26,11 +26,11 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
 1. On the next page, click <strong>Create</strong> after agreeing to the terms and conditions.
 
-    ![Deployment Template Page 2](./imgs/sczmm-deploy-template2.PNG)
+    ![Deployment Template Page 2](./imgs/locker-deploy-template2.PNG)
 
     The deployment may take several minutes to complete and should result in creation of Azure resources within the specified resource group.
 
-    ![Deployment Template Page 3](./imgs/sczmm-deploy-template3.PNG)
+    ![Deployment Template Page 3](./imgs/locker-deploy-template3.PNG)
 
 ## Step 2: Update deployment using PowerShell script
 
