@@ -11,7 +11,7 @@ This Notebook uses Azure-Percept-SMM Python SDK to preform a series of model ope
     %env AZURE_CLIENT_ID="555d..."
     %env AZURE_CLIENT_SECRET="6da3..."
     %env AZURE_TENANT_ID="72f9..."
-    server_url = "https://scz-mm1.westus2.cloudapp.azure.com"
+    server_url = "https://test-mm.westus2.cloudapp.azure.com"
     ```
 2.	Run all cells in the Notebook.
 

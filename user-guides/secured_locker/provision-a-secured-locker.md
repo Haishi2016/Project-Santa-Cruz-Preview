@@ -61,10 +61,10 @@ We offer a PowerShell script for server deployment. To run the script, you must 
     
     > **NOTE**: your Key Vault instance will be [Vault_prefix]-kv, where [Vault_prefix] is the prefix parameter chosen during the custom deployment creation above.
 
-   For example, the following command generates a new service principal and grants it access to the ```scz-mm1-kv``` key vault instance under the ```my-subscription``` subscription:
+   For example, the following command generates a new service principal and grants it access to the ```test-mm-kv``` key vault instance under the ```my-subscription``` subscription:
 
    ```
-    ./device_identity.ps1 -vaultName scz-mm1-kv -subscription my-subscription
+    ./device_identity.ps1 -vaultName test-mm-kv -subscription my-subscription
     ```
 
 1. The script will open a web browser. Enter your Azure account login details when prompted.
@@ -103,13 +103,13 @@ The Azure Percept Secure AI solution offers a ```config_certificate.ps1``` Power
    For example, the following command updates your locker deployment with a self-signed certificate.
 
    ```
-   ./config_certificate.ps1 -subscription my-subscription -prefix scz-mm1  -resourceGroup scz-mm -location westus2
+   ./config_certificate.ps1 -subscription my-subscription -prefix test-mm  -resourceGroup my-rg -location westus2
    ```
 
    To use your own certificate, run the script with a ```certFile``` parameter pointing to your ```.pfx``` file and ```certPassword``` parameter with your private key password. For example:
 
    ```
-   ./config_certificate.ps1 -subscription my-subscription -prefix scz-mm1  -resourceGroup scz-mm  -location westus2 -certFile .\appgwcert.pfx -certPassword abc
+   ./config_certificate.ps1 -subscription my-subscription -prefix test-mm  -resourceGroup my-rg -location westus2 -certFile .\appgwcert.pfx -certPassword abc
    ```
 
 1. When prompted (only when you use auto-generated certificate), enter a password for your certificate private key.

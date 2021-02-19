@@ -11,7 +11,7 @@ This sample program uses Azure-Percept-SMM Python SDK to preform a series of mod
     os.environ["AZURE_CLIENT_ID"] = "555d..."
     os.environ["AZURE_CLIENT_SECRET"] = "6da3..."
     os.environ["AZURE_TENANT_ID"] = "72f9..."
-    server_url = "https://scz-mm1.westus2.cloudapp.azure.com"
+    server_url = "https://test-mm.westus2.cloudapp.azure.com"
     ```
 2.	Run the program
 
@@ -28,5 +28,5 @@ This sample program uses Azure-Percept-SMM Python SDK to preform a series of mod
 > **NOTE:** You'll see a few certificate warnings. These are caused by the self-signed certificate used by Azure-Percept-SMM server deployment. You can ignore these warnings, or replace the certificate with a trusted certificate.
 
 ```bash
-InsecureRequestWarning: Unverified HTTPS request is being made to host 'scz-mm1.westus2.cloudapp.azure.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+InsecureRequestWarning: Unverified HTTPS request is being made to host 'test-mm.westus2.cloudapp.azure.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
 ```

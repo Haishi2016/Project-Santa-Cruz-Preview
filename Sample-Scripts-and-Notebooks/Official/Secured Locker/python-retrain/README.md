@@ -19,7 +19,7 @@ Once the data is uploaded to data repository, you can use services such as [Azur
     os.environ["AZURE_CLIENT_ID"] = "555d..."
     os.environ["AZURE_CLIENT_SECRET"] = "6da3..."
     os.environ["AZURE_TENANT_ID"] = "72f9..."
-    server_url = "https://scz-mm1.westus2.cloudapp.azure.com"
+    server_url = "https://test-mm.westus2.cloudapp.azure.com"
     ```
 2.	Run the program
 

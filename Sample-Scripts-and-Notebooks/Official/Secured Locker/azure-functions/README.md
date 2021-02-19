@@ -15,7 +15,7 @@ To run the sample, you need:
 * Language : Python
 * Python interpreter: Python 3.6.x, 3.7.x 3.8.x are supported
 * Template: Azure Blob Storage trigger
-* Select a storage account: choose your Azure-Percept-SMM service storage account (i.e. mymmmodels)
+* Select a storage account: choose your Azure-Percept-SMM service storage account (i.e. testmmmodels)
 * Blob storage path to be monitored: data
 
 ## 2. Add the following environment variables in local.settings.json with proper settings:
@@ -37,8 +37,8 @@ For example:
 "AZURE_CLIENT_ID": "33e5...",
 "AZURE_CLIENT_SECRET": "c383...",
 "AZURE_TENANT_ID": "72f9...",
-"mm_server_url": "https://my-mm.westus2.cloudapp.azure.com",
-"mm_storage_account": "mymmmodels",
+"mm_server_url": "https://test-mm.westus2.cloudapp.azure.com",
+"mm_storage_account": "testmmmodels",
 "mm_telemtry_storage_container": "data",
 "mm_model_name": "person-detection-retail",
 "mm_model_version": "0013",

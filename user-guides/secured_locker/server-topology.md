@@ -20,7 +20,7 @@ However, the Azure-Percept-SMM server relies on a few Azure services to deliver 
 
 * **Key Vault**
   
-    Azure-Percept-SMM uses Azure Key Vault to manage encryption/decryption keys. Azure-Percept-SMM generates a new key for each model version so that the key only works for a specific version of a specific AI model. SCZ-MM also uses Azure Key Vault to manage the service certificate that is associated with the Application Gateway instance.
+    Azure-Percept-SMM uses Azure Key Vault to manage encryption/decryption keys. Azure-Percept-SMM generates a new key for each model version so that the key only works for a specific version of a specific AI model. Azure-Percept-SMM also uses Azure Key Vault to manage the service certificate that is associated with the Application Gateway instance.
 
 * **Public IP**
   
