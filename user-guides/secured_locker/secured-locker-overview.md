@@ -4,6 +4,6 @@ Azure Percept provides AI model protections [at rest](protection-at-rest.md), [i
 
 The Azure Percept preview kit (Azure-Percept-SMM) is shipped with a secured AI model locker and a Python SDK, as highlighted in the following diagram. The [locker](server-topology.md) provides secured key and model management capabilities. In the future, the SDK will interact with the device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
 
-![Architecture](./imgs/architecture.png)
+![Architecture](./imgs/architecture.png) (ToDo: Update the architecture picture with scz removed)
 
 To get started with provisioning a secured locker, see this [quickstart](provision-a-secured-locker.md).
