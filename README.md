@@ -17,8 +17,8 @@ On this page you will find everything you need to get started using your dev kit
 - [Build a custom solution using Advanced code (VS Code + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/MobileNetV2SSDL_TrainingonVSCodeIDE/readme.md)
 
 ## 4. Secure Your Model and Data
-
-* [Setup a secured AI model locker](user-guides/secured_locker/deployment.md)
+* [Secured locker overview](user-guides/secured_locker/secured-locker-overview.md)
+* [Setup a secured locker](user-guides/secured_locker/provision-a-secured-locker.md)
 * [Use Santa Cruz SDK to encrypt/decrypt models](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
 * [Use Santa Cruz SDK in Jupyter notebook](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
 * [Send re-training data to the locker](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
