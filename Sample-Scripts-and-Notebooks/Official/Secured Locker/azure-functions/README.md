@@ -25,9 +25,7 @@ To run the sample, you need:
 "AZURE_TENANT_ID": "",
 "mm_server_url": "",
 "mm_storage_account": "",
-"mm_telemtry_storage_container": "data",
-"mm_model_name": "",
-"mm_model_version": "",
+"mm_telemetry_storage_container": "data",
 "custom_vision_endpoint": "",
 "custom_vision_training_key": "",
 "custom_vision_project_id": ""
@@ -39,9 +37,7 @@ For example:
 "AZURE_TENANT_ID": "72f9...",
 "mm_server_url": "https://test-mm.westus2.cloudapp.azure.com",
 "mm_storage_account": "testmmmodels",
-"mm_telemtry_storage_container": "data",
-"mm_model_name": "person-detection-retail",
-"mm_model_version": "0013",
+"mm_telemetry_storage_container": "data",
 "custom_vision_endpoint": "https://cvdemo.cognitiveservices.azure.com/",
 "custom_vision_training_key": "4240...",
 "custom_vision_project_id": "2253..."
@@ -75,10 +71,8 @@ import sczpy
 
 # Secure locker config
 server_url = os.environ["mm_server_url"]
-model_name = os.environ["mm_model_name"]
-model_version = os.environ["mm_model_version"]
 storage_name = os.environ["mm_storage_account"]
-storage_container = os.environ["mm_telemtry_storage_container"]
+storage_container = os.environ["mm_telemetry_storage_container"]
 storage_url = f"https://{storage_name}.blob.core.windows.net"
 
 # Custom vision project config
@@ -106,35 +100,39 @@ def create_data_storage_client(blob_name):
 
 def main(myblob: func.InputStream):
     logging.info(f"Blob trigger function processed. Blob name: {myblob.name}")
-    if model_name in myblob.name:
-        # Download data file to local
-        blob_name = myblob.name.replace('data/', '')
-        download_file = os.path.join(data_dir,  blob_name)
-        decrypted_file = os.path.join(data_dir, blob_name + '.dec.jpg')
-        image_list = []
 
-        storage_client = create_data_storage_client(blob_name)
+    # Download data file to local
+    blob_name = myblob.name.replace('data/', '')
+    storage_client = create_data_storage_client(blob_name)
+    blob_prop = storage_client.get_blob_properties()
+    model_name = blob_prop.metadata['model_name'] 
+    model_version = blob_prop.metadata['model_version']
 
-        with open(download_file, "wb") as encypted_data:
-            download_stream = storage_client.download_blob()
-            encypted_data.write(download_stream.readall())
-            # Decrpt data
-            client.decrypt(model_name, model_version, download_file, decrypted_file)
-        
-        with open(decrypted_file, "rb") as image_contents:
-            image_list.append(ImageFileCreateEntry(name=blob_name, contents=image_contents.read()))
-        # Upload data to custom vision project
-        upload_result = trainer.create_images_from_files(project.id, ImageFileCreateBatch(images=image_list))
-        if not upload_result.is_batch_successful:
-            logging.info(f"Image batch upload failed.")
-            for image in upload_result.images:
-                logging.info(f"Image status: {image.status}")
-        else:
-            logging.info(f"Image batch upload succeeded.")
+    download_file = os.path.join(data_dir,  blob_name)
+    decrypted_file = os.path.join(data_dir, blob_name + '.dec.jpg')
+    image_list = []
 
-        # Clean up temp files
-        os.remove(download_file)
-        os.remove(decrypted_file)   
+    # Decrypt data
+    with open(download_file, "wb") as encypted_data:
+        download_stream = storage_client.download_blob()
+        encypted_data.write(download_stream.readall())
+        client.decrypt(model_name, model_version, download_file, decrypted_file)
+    
+    # Upload data to custom vision project
+    with open(decrypted_file, "rb") as image_contents:
+        image_list.append(ImageFileCreateEntry(name=blob_name, contents=image_contents.read()))
+
+    upload_result = trainer.create_images_from_files(project.id, ImageFileCreateBatch(images=image_list))
+    if not upload_result.is_batch_successful:
+        logging.info(f"Image batch upload failed.")
+        for image in upload_result.images:
+            logging.info(f"Image status: {image.status}")
+    else:
+        logging.info(f"Image batch upload succeeded.")
+
+    # Clean up temp files
+    os.remove(download_file)
+    os.remove(decrypted_file)
 ```
 
 ## 7. Debug the project locally to make sure the retraining data can be fetched from the Azure-Percept-SMM storage blob, decrypted and uploaded to Custom Vision project as "Untagged" images.
