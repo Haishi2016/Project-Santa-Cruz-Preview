@@ -17,8 +17,8 @@ On this page you will find everything you need to get started using your dev kit
 - [Build a custom solution using Advanced code (VS Code + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/MobileNetV2SSDL_TrainingonVSCodeIDE/readme.md)
 
 ## 4. Protect Your Model and Data
-* [Secured locker overview](user-guides/secured_locker/secured-locker-overview.md)
-* [Setup a locker](user-guides/secured_locker/provision-a-secured-locker.md)
+* [Overview](user-guides/secured_locker/secured-locker-overview.md)
+* [Set up a locker](user-guides/secured_locker/provision-a-secured-locker.md)
 * [Use Azure Percept SDK to encrypt/decrypt models](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
 * [Use Azure Percept SDK in Jupyter notebook](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
 * [Send re-training data to the locker](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)

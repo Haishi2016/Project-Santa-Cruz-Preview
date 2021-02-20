@@ -4,7 +4,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
 ## Step 1. Provision Azure Percept AI/ML model and sensor data protection solution
 
-1. Press this button to deploy the Azure Percept AI/ML model and sensor data protection solution to your Azure public cloud (ToDo: change azuredeploy.json url to the official path):
+1. Press this button to deploy the Azure Percept AI/ML model and sensor data protection solution to your Azure public cloud (ToDo: 1. change azuredeploy.json url to the official path 2. Update deployment json with the official container, and remove the imageRegistryCredentials):
 
     [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
 
@@ -12,7 +12,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
     ![Deployment Template Page 1](./imgs/locker-deploy-template1.PNG)
 
-1. To deploy the solution in the cloud, enter the following parameters and click **Review + create**:
+2. To deploy the solution in the cloud, enter the following parameters and click **Review + create**:
 
     - <strong>Subscription</strong>: the subscription in which to create the solution.
 
@@ -24,7 +24,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
     - <strong>Vault_prefix</strong>: prefix to attach to new resource names.
 
-1. On the next page, click <strong>Create</strong> after agreeing to the terms and conditions.
+3. On the next page, click <strong>Create</strong> after agreeing to the terms and conditions.
 
     ![Deployment Template Page 2](./imgs/locker-deploy-template2.PNG)
 
