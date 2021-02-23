@@ -45,7 +45,7 @@ function Connect-Azure {
 
   function New-Deployment {
     if (-not $silent) {
-        Write-Host "`n Updating Santa Cruz locker ..." -ForegroundColor Green
+        Write-Host "`n Updating Azure Percept locker ..." -ForegroundColor Green
     }
 
     $today=Get-Date -Format "MM-dd-yyyy"
@@ -81,7 +81,7 @@ function Update-SantaCruzLocker {
     }
     Connect-Azure
     New-Deployment
-    Write-Host "`n Santa Cruz Secred Model Management server is provisioned at: ", $global:service_endpoint -ForegroundColor Cyan     
+    Write-Host "`n Azure Percept secure AI/ML model management server is provisioned at: ", $global:service_endpoint -ForegroundColor Cyan     
 }
 
 function Get-AzTemplateParameters {

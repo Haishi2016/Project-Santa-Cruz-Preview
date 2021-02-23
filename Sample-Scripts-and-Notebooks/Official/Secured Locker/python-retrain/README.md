@@ -1,8 +1,8 @@
 # Re-training 
 
-SCZ-SMM helps to you to trigger automatic re-training pipelines. Instead of creating its own telemetry collection system, SCZ-SMM is integrated with [OpenTelemetry]( https://opentelemetry.io/) that supports a big ecosystem of distributed tracing and metrics collection/analysis systems, including [Prometheus]( https://prometheus.io/), [Jaeger]( https://www.jaegertracing.io/), [Zipkin]( https://zipkin.io/), and many others. It also has SDKs in popular programming languages such as C#, Go and Python.
+Azure-Percept-SMM helps to you to trigger automatic re-training pipelines. Instead of creating its own telemetry collection system, Azure-Percept-SMM is integrated with [OpenTelemetry]( https://opentelemetry.io/) that supports a big ecosystem of distributed tracing and metrics collection/analysis systems, including [Prometheus]( https://prometheus.io/), [Jaeger]( https://www.jaegertracing.io/), [Zipkin]( https://zipkin.io/), and many others. It also has SDKs in popular programming languages such as C#, Go and Python.
 
-SCZ-SMM SDK provides two OpenTelemetry exporters - ```SCZSpanExporter``` and ```SCZMeticsExporter``` that can be used to monitor distributed tracing span or metrics, respectively. You can associate policies to these exporters to decide when additional training data should be collected, encrypted, and uploaded to SCZ-SMM training data repository. For example, you may set up a trigger to upload a current image if the confidence score is lower than a threshold (which means the model is less certain about the content).
+Azure-Percept-SMM SDK provides two OpenTelemetry exporters - ```SCZSpanExporter``` and ```SCZMeticsExporter``` that can be used to monitor distributed tracing span or metrics, respectively. You can associate policies to these exporters to decide when additional training data should be collected, encrypted, and uploaded to Azure-Percept-SMM training data repository. For example, you may set up a trigger to upload a current image if the confidence score is lower than a threshold (which means the model is less certain about the content).
 
 Once the data is uploaded to data repository, you can use services such as [Azure Logic Apps]( https://azure.microsoft.com/en-us/services/logic-apps/) to pick up the data and trigger the retraining pipeline, as shown in [this sample]( https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline).
 
@@ -14,12 +14,12 @@ Once the data is uploaded to data repository, you can use services such as [Azur
 > 
 > A flexible policy engine is in the plan for future versions.
 
-1.	Before testing, you need to update the environment variables ```AZURE_CLIENT_ID```, ```AZURE_CLIENT_SECRET``` and ```AZURE_TENANT_ID``` to match with your service principal credential. Then, you need to update the ```server_url``` to point to your Santa Cruz server endpoint. For example:
+1.	Before testing, you need to update the environment variables ```AZURE_CLIENT_ID```, ```AZURE_CLIENT_SECRET``` and ```AZURE_TENANT_ID``` to match with your service principal credential. Then, you need to update the ```server_url``` to point to your Azure-Percept-SMM server endpoint. For example:
     ```python
     os.environ["AZURE_CLIENT_ID"] = "555d..."
     os.environ["AZURE_CLIENT_SECRET"] = "6da3..."
     os.environ["AZURE_TENANT_ID"] = "72f9..."
-    server_url = "https://scz-mm1.westus2.cloudapp.azure.com"
+    server_url = "https://test-mm.westus2.cloudapp.azure.com"
     ```
 2.	Run the program
 
@@ -27,7 +27,7 @@ Once the data is uploaded to data repository, you can use services such as [Azur
     python app.py
     ```
 3. [Optional] Launch Jaeger container (see Appendix).	
-4. Observe new data files are uploaded to your SCZ-SMM storage account, under the ```data``` container.
+4. Observe new data files are uploaded to your Azure-Percept-SMM storage account, under the ```data``` container.
 
     > **NOTE:** ```data``` container will be replaced by model-specific containers in future versions.
 5. [Optional] Observe Jaeger dashboard at ```http://localhost:16686```.
