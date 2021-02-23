@@ -16,7 +16,7 @@ Azure Percept MM service relies on a few Azure services to deliver required capa
 
 * **Container Instance**
 
-    Because the Azure Percept MM service is a lightweight, stateless web service, ACI (Azure Container Instances) is a nice choice to host Azure Percept MM instances with minimum cost. However, you can certainly choose to host the Azure Percept MM container in other environments (such as your existing Kubernetes clusters). By default, the Azure Percept MM service listens to port 5000 over HTTPS protocol.
+    Because the Azure Percept MM service is a lightweight, stateless web service, ACI (Azure Container Instances) is a nice choice to host Azure Percept MM instances with minimum cost. However, you can certainly choose to host the Azure Percept MM container in other environments (such as your existing Kubernetes clusters). By default, the Azure Percept MM service listens to port 5000 over HTTP protocol (only on the local network to the Application Gateway).
 
 * **Key Vault**
   
