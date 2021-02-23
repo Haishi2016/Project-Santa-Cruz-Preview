@@ -1,10 +1,10 @@
-# Provision a new secured locker
+# Provision a new locker
 
-A secured AI model locker relies on a number of Azure resources to operate (please see [server topology](server-topology.md) for more details). To provision your server instance on Azure, follow the steps outlined below.  
+Azure Percept MM relies on a number of Azure resources to operate (please see [server topology](server-topology.md) for more details). To provision an instance on Azure, follow the steps outlined below.  
 
 ## Step 1. Provision Azure Percept AI/ML model and sensor data protection solution
 
-1. Press this button to deploy the Azure Percept AI/ML model and sensor data protection solution to your Azure public cloud (ToDo: 1. change azuredeploy.json url to the official path 2. Update deployment json with the official container, and remove the imageRegistryCredentials):
+1. Press this button to deploy Azure Percept MM solution to your Azure public cloud (ToDo: 1. change azuredeploy.json url to the official path 2. Update deployment json with the official container, and remove the imageRegistryCredentials):
 
     [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FJiaBaoxi%2FPublicShare%2Fmaster%2Fazuredeploy.json)
 
@@ -16,7 +16,7 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
     - <strong>Subscription</strong>: the subscription in which to create the solution.
 
-    - <strong>Resource Group</strong>: unique name of a new resource group to host the Azure Percept AI/ML model and sensor data protection solution components.
+    - <strong>Resource Group</strong>: unique name of a new resource group to host the Azure Percept MM solution components.
 
     - <strong>Region</strong>: Azure region in which the solution will be deployed.
 
@@ -36,13 +36,13 @@ A secured AI model locker relies on a number of Azure resources to operate (plea
 
 ### Prerequisites
 
-We offer a PowerShell script for server deployment. To run the script, you must install the following:
+We offer a PowerShell script for service deployment. To run the script, you must install the following:
 
 - [Git Bash](https://git-scm.com/downloads)
 - [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7)
 - [Azure PowerShell Module](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-4.6.1)
 
-### Update server access
+### Update service access
 
 1. Open Git Bash and enter the following to clone the Project Azure Percept GitHub repository:
 
@@ -72,25 +72,25 @@ We offer a PowerShell script for server deployment. To run the script, you must 
 1. Once the script finishes, it will output the service principal that has been granted access to the Azure Key Vault service:
 
    ```
-   Azure Percept secure AI/ML model management server is provisioned at:  ...
+   Azure Percept secure AI/ML model management service is provisioned at:  ...
    Service Principal Client ID:     3f38...
    Service Principal Tenant ID:     72f9...
    Service Principal Client Secret: bf49...
    ```
 
-    > **NOTE**: Write down the service principal credentials (Client ID, Tenant ID, Client Secret). You'll use it to log in to the Azure Percept server later.
+    > **NOTE**: Write down the service principal credentials (Client ID, Tenant ID, Client Secret). You'll use it to log in to the Azure Percept service later.
 
 ## Step 3: Add TLS certificate to gateway
 
-A secured AI model locker is deployed with an [Azure Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview) as its entry point. By default, the gateway is configured to serve an HTTP endpoint only. As we may need to pass the decryption key to the client-side containers, you should enable HTTPS on the Application Gateway instance with a proper certificate that has the subject matching with the gateway’s FQDN.
+Azure Percept MM is deployed with an [Azure Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview) as its entry point. By default, the gateway is configured to serve an HTTP endpoint only. As we may need to pass the decryption key to the client-side containers, you should enable HTTPS on the Application Gateway instance with a proper certificate that has the subject matching with the gateway’s FQDN.
 
-The Azure Percept Secure AI solution offers a ```config_certificate.ps1``` PowerShell script to assist you with configuring the certificate. If you don't have a certificate, the script generates a self-signed certificate (for testing purposes only). You'll need ```openssl``` to generate the certificate.
+The Azure Percept MM solution offers a ```config_certificate.ps1``` PowerShell script to assist you with configuring the certificate. If you don't have a certificate, the script generates a self-signed certificate (for testing purposes only). You'll need ```openssl``` to generate the certificate.
 
->**NOTE**: The easiest way to get ```openssl``` on Windows 10 is to install [Git Bash](https://git-scm.com/downloads), which comes with ```openssl``` under folder ```c:\Program Files\Git\usr\bin```. The script assumes you've added openssl to your PATH variable.
+>**NOTE**: A way to get ```openssl``` on Windows 10 is to install [Git Bash](https://git-scm.com/downloads), which comes with ```openssl``` under folder ```c:\Program Files\Git\usr\bin```. The script assumes you've added openssl to your PATH variable.
 
 1. Launch PowerShell as an Administrator.
 
-> **NOTE**: we need administrative privilege for key operations while creating the self-signed certificate.
+> **NOTE**: Administrative privileges are required when creating self-signed certificate.
 
 1. Run the config_certificate script:
 
@@ -116,12 +116,12 @@ The Azure Percept Secure AI solution offers a ```config_certificate.ps1``` Power
 
 1. Once the script finishes, your Application Gateway will be configured to use HTTPS (via port 443) instead of HTTP (via port 5000).
 
-   > **NOTE**: Write down the server URL. You'll use it to access the server later.
+   > **NOTE**: Write down the service URL. You'll use it to access the service later.
 
 ## Step 4: Install Python SDK (ToDo: Add the setup guide)
 
 ## Step 5: Clean up resources
 
-Other Azure Percept Secure AI Lifecycle features build upon this quickstart. If you plan to continue with subsequent quickstarts and tutorials, you may wish to leave these resources in place.
+Other Azure Percept MM features build upon this quickstart. If you plan to continue with subsequent quickstarts and tutorials, you may wish to leave these resources in place.
 
-When you are ready to clean up resources, please ensure you have decrypted any data and/or AI/ML models prior to deletion. Afterward, delete the resource group, which deletes the Azure Percept Secure AI Lifecycle solution components.
+When you are ready to clean up resources, please ensure you have decrypted any data and/or AI/ML models prior to deletion. Afterward, delete the resource group, which deletes the Azure Percept MM solution components.
