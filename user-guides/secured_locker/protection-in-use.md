@@ -4,7 +4,7 @@ Protecting AI models in use from rogue administrators and hackers is a challengi
 
 ## Prevent unauthorized usages
 
-Azure Percept SMM uses [Authentication](TBD), [Authorization](TBD), and [Attestation](TBD) to limit usage by authorized devices. Azure Percept MM also supports device attestation based on secrets stored in the TPM to establish hardware root of trust, which limits AI model decryption and use to legitimate, untampered devices. The attestation features will be updated in a future version of the Azure Percept SDK.
+Azure Percept SMM uses Authentication and Authorization to limit usage to authorized devices. Azure Percept MM also supports device attestation based on secrets stored in the TPM to establish hardware root of trust, which limits AI model decryption and usage to legitimate, untampered devices. The attestation features will be updated in a future version of the Azure Percept SDK.
 
 ## Private AI Model algorithms
 
