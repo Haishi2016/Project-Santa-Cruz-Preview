@@ -19,9 +19,9 @@ On this page you will find everything you need to get started using your dev kit
 ## 4. Protect Your Models and Sensor Data
 * [Overview](user-guides/secured_locker/secured-locker-overview.md)
 * [Set up a locker](user-guides/secured_locker/provision-a-secured-locker.md)
-* [Use Azure Percept SDK to encrypt/decrypt models](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
-* [Use Azure Percept SDK in Jupyter notebook](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
-* [Send retraining data to a locker](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
+* [Encrypt/Decrypt models using a custom Python solution](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
+* [Encrypt/Decrypt models using a custom Jupyter notebook solution](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
+* [Protect retraining data](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
 * [Use Azure Functions to drive a retraining pipeline](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/azure-functions/README.md)
 * [Use Azure Logic Apps to drive a retraining pipeline](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline)
 * 
