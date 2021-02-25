@@ -1,6 +1,6 @@
 # Provision a new locker
 
-Azure Percept MM relies on a number of Azure resources to operate (please see [server topology](server-topology.md) for more details). To provision an instance on Azure, follow the steps outlined below.  
+Azure Percept MM relies on a number of Azure resources to operate (please see [topology](server-topology.md) for more details). To provision an instance on Azure, follow the steps outlined below.  
 
 ## Step 1. Provision Azure Percept AI/ML model and sensor data protection solution
 
