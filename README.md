@@ -24,7 +24,7 @@ On this page you will find everything you need to get started using your dev kit
 * [Protect retraining data](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
 * [Use Azure Functions to drive a retraining pipeline](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/azure-functions/README.md)
 * [Use Azure Logic Apps to drive a retraining pipeline](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline)
-* 
+ 
 ## Keep your Dev Kits Up To Date
 - [Update over-the-air](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/ota_update.md)
 - [Update via USB](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/usb_updating.md)
