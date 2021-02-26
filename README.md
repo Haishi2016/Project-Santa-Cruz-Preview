@@ -16,7 +16,7 @@ On this page you will find everything you need to get started using your dev kit
 - [Build a custom solution using Advanced code (Machine Learning Notebooks – Jupyter Notebooks + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/readme.md)
 - [Build a custom solution using Advanced code (VS Code + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/MobileNetV2SSDL_TrainingonVSCodeIDE/readme.md)
 
-## 4. Protect Your Models and Sensor Data
+## 4. Protect Your AI/ML Model and Sensor Data
 * [Overview](user-guides/secured_locker/secured-locker-overview.md)
 * [Set up a locker](user-guides/secured_locker/provision-a-secured-locker.md)
 * [Encrypt/Decrypt models using a custom Python solution](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
