@@ -10,7 +10,7 @@ Azure Percept MM relies on a number of Azure resources to operate (please see [t
 
     The button will redirect you to the **Custom deployment** page in the Azure portal:
 
-    ![Deployment Template Page 1](./imgs/locker-deploy-template1.PNG)
+    ![Deployment Template Page 1](./imgs/locker-deploy-template1.png)
 
 2. To deploy the solution in the cloud, enter the following parameters and click **Review + create**:
 
