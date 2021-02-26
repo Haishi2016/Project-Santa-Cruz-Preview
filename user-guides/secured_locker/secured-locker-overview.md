@@ -4,6 +4,6 @@ Azure Percept provides AI model protections [at rest](protection-at-rest.md) and
 
 Azure Percept Studio can be configured with the Azure Percept Model Management (Azure Percept MM) and Azure Percept software development kit (SDK), as highlighted in the following diagram. The [solution](server-topology.md) provides key and model management capabilities. In the future, the SDK will interact with the device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
 
-![Architecture](./imgs/architecture.png) 
+![Architecture](./imgs/Azure_Percept_Model_and_Data_Protection.Architecture.png) 
 
 To get started with provisioning a secured locker, see this [quickstart](provision-a-secured-locker.md).
