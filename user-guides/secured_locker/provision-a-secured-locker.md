@@ -30,7 +30,7 @@ Azure Percept MM relies on a number of Azure resources to operate (please see [t
 
     The deployment may take several minutes to complete and should result in creation of Azure resources within the specified resource group.
 
-    ![Deployment Template Page 3](./imgs/locker-deploy-template3.PNG)
+    ![Deployment Template Page 3](./imgs/locker-deploy-template3.png)
 
 ## Step 2: Update deployment using PowerShell script
 
