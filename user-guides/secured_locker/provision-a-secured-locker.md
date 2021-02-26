@@ -118,7 +118,10 @@ The Azure Percept MM solution offers a ```config_certificate.ps1``` PowerShell s
 
    > **NOTE**: Write down the service URL. You'll use it to access the service later.
 
-## Step 4: Install Python SDK (ToDo: Add the setup guide)
+## Step 4: Install Python SDK
+If [Python](https://www.python.org/) is not already installed, then use the Dev Tools Pack Installer to configure the tools required to protect AI/Ml models and training data. Please note that the Dev Tools Pack Installer will reinstall any existing packages so that your tools are consistent with the Installer software versions.
+
+[Dev Tools Pack Installer Instructions](https://go.microsoft.com/fwlink/?linkid=2156431)
 
 ## Step 5: Clean up resources
 
