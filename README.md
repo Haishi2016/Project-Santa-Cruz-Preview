@@ -16,15 +16,15 @@ On this page you will find everything you need to get started using your dev kit
 - [Build a custom solution using Advanced code (Machine Learning Notebooks – Jupyter Notebooks + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/Machine%20Learning%20Notebooks/readme.md)
 - [Build a custom solution using Advanced code (VS Code + AML)](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/Sample-Scripts-and-Notebooks/Official/MobileNetV2SSDL_TrainingonVSCodeIDE/readme.md)
 
-## 4. Protect Your Model and Data
+## 4. Protect Your AI/ML Model and Sensor Data
 * [Overview](user-guides/secured_locker/secured-locker-overview.md)
 * [Set up a locker](user-guides/secured_locker/provision-a-secured-locker.md)
-* [Use Azure Percept SDK to encrypt/decrypt models](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
-* [Use Azure Percept SDK in Jupyter notebook](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
-* [Send re-training data to the locker](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
-* [Use Azure Logic Apps to drive re-training pipeline](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline)
-* [Use Azure Functions to drive re-training pipeline](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/azure-functions/README.md)
-
+* [Encrypt/Decrypt models using a custom Python solution](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-program/README.md)
+* [Encrypt/Decrypt models using a custom Jupyter notebook solution](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/jupyter-basics/README.md)
+* [Protect retraining data](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/python-retrain/README.md)
+* [Use Azure Functions to drive a retraining pipeline](Sample-Scripts-and-Notebooks/Official/Secured%20Locker/azure-functions/README.md)
+* [Use Azure Logic Apps to drive a retraining pipeline](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-trigger-published-pipeline)
+ 
 ## Keep your Dev Kits Up To Date
 - [Update over-the-air](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/ota_update.md)
 - [Update via USB](https://github.com/microsoft/Project-Santa-Cruz-Private-Preview/blob/main/user-guides/updating/usb_updating.md)

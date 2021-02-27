@@ -1,9 +1,11 @@
-# Securing your AI model and data
+# Protecting your AI model and sensor data
 
-Azure Percept provides AI model protections [at rest](protection-at-rest.md), [in transit](protection-in-transit.md) and [in use](protection-in-use.md). It's designed to work with existing AI systems and workflows such as [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/), [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/), and [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/). The long-term goal of Azure Percept is to provide a unified experience across underlying systems.
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
 
-The Azure Percept preview kit (Azure-Percept-SMM) is shipped with a secured AI model locker and a Python SDK, as highlighted in the following diagram. The [locker](server-topology.md) provides secured key and model management capabilities. In the future, the SDK will interact with the device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
+Azure Percept provides AI model protection [at rest](protection-at-rest.md) and [in transit](protection-in-transit.md). It's designed to work with existing AI systems and workflows such as [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/), [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/), and [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/). The long-term goal of Azure Percept is to provide a unified experience across underlying systems.
 
-![Architecture](./imgs/architecture.png) (ToDo: Update the architecture picture with scz removed)
+Azure Percept Studio can be configured with the Azure Percept Model Management (Azure Percept MM) and Azure Percept software development kit (SDK), as highlighted in the following diagram. The [solution](server-topology.md) provides key and model management capabilities. In the future, the SDK will interact with the device TPM and attestation service to prove device identity with the server to retrieve protected keys or models.
+
+![Architecture](./imgs/Azure_Percept_Model_and_Data_Protection.Architecture.png) 
 
 To get started with provisioning a secured locker, see this [quickstart](provision-a-secured-locker.md).

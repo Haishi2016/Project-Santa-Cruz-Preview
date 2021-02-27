@@ -1,3 +1,6 @@
+#Copyright (c) Microsoft Corporation. All rights reserved.
+#Licensed under the MIT License.
+
 from opentelemetry import trace
 from opentelemetry import metrics
 from opentelemetry.sdk.trace import TracerProvider
