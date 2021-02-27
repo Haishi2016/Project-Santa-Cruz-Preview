@@ -13,7 +13,7 @@ This sample program uses Azure Percept MM Python SDK to preform a series of mode
     os.environ["AZURE_TENANT_ID"] = "72f9..."
     server_url = "https://test-mm.westus2.cloudapp.azure.com"
     ```
-2.	Run the program
+2.	Start Git Bash then run the program
 
     ```bash
     python app.py
