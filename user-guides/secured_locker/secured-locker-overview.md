@@ -1,4 +1,4 @@
-# Securing your AI model and data
+# Protecting your AI model and data
 
 Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
 
