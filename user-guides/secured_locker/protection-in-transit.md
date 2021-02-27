@@ -1,5 +1,7 @@
 # AI Model Protection in transit
 
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+
 Azure Percept MM transfers AI models and  keys over the TLS (Transport Layer Security) channel after successfully authenticating the client.
 
 When you deploy the Azure Percept MM service using the deployment script, the script generates a self-signed certificate to be associated with the Azure Application Gateway instance that serves as the front door of the Azure Percept MM service. Azure Application Gateway performs TLS termination and talks to the Azure Percept MM service over a private network in plain text (HTTP).
