@@ -9,7 +9,7 @@ This sample demonstrates how to create an Azure Function to decrypt the Azure Pe
 To run the sample, you need:
 
 * [Install Visual Studio Code](https://code.visualstudio.com)
-* [Config Visual Studio Code for Azure Functions development](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python)
+* [Config Visual Studio Code for Azure Functions development](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python)
 * [Setup Custom Vision project and get project info](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/object-detection?tabs=visual-studio&pivots=programming-language-python)
 * Service Principal (AZURE_CLIENT_ID, AZURE_CLIENT_SECRET and AZURE_TENANT_ID) which was recorded during Secure AI lifecycle service deployment.
 
