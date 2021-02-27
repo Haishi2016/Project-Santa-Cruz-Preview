@@ -2,7 +2,7 @@
 
 Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
 
-This sample demonstrates how to create an Azure Function to decrypt the Azure-Percept-SMM retraining data and upload it to a Custom Vision project for model retraining. 
+This sample demonstrates how to create an Azure Function to decrypt the Azure Percept MM encrypted retraining data and upload it to a Custom Vision project for model retraining. 
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ To run the sample, you need:
 * Language : Python
 * Python interpreter: Python 3.6.x, 3.7.x 3.8.x are supported
 * Template: Azure Blob Storage trigger
-* Select a storage account: choose your Azure-Percept-SMM service storage account (i.e. testmmmodels)
+* Select a storage account: choose your Azure Percept MM service storage account (i.e. testmmmodels)
 * Blob storage path to be monitored: data
 
 ## 2. Add the following environment variables in local.settings.json with proper settings:
