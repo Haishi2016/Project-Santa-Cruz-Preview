@@ -1,5 +1,7 @@
 # sczpy-basics.ipynb
 
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+
 This Notebook uses Azure-Percept-SMM Python SDK to preform a series of model operations:
 > * Encryption (encrypts ```model.txt``` to ```model.txt.enc```)
 > * Decryption (decrypts ```model.txt.enc``` to ``` model.decrypted.txt```)
