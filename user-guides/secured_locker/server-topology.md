@@ -1,5 +1,7 @@
 # Topology
 
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+
 The Azure Percept MM service  runs as a single, stateless Docker container. This allows the service to be deployed and scaled on any hosting platforms where Docker containers are supported, including (but not limited to): [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/), [Azure Functions](https://azure.microsoft.com/en-us/services/functions/), [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service), and other [Kubernetes](https://kubernetes.io/) clusters.
 
 Azure Percept MM service relies on a few Azure services to deliver required capabilities such as key management, file management, authentication, attestation, and more. The following diagram illustrates how Azure Percept MM is deployed as an ACI instance, interacts with other Azure services.
