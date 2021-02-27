@@ -11,7 +11,7 @@ To run the sample, you need:
 * [Install Visual Studio Code](https://code.visualstudio.com)
 * [Config Visual Studio Code for Azure Functions development](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python)
 * [Setup Custom Vision project and get project info](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/object-detection?tabs=visual-studio&pivots=programming-language-python)
-* Service Principal (AZURE_CLIENT_ID, AZURE_CLIENT_SECRET and AZURE_TENANT_ID) which was recorded during Secure AI lifecycle service deployment.
+* Service Principal (AZURE_CLIENT_ID, AZURE_CLIENT_SECRET and AZURE_TENANT_ID) which was recorded during Percept Model Management service deployment.
 
 ## 1. Launch Visual Studio Code, create a new Azure Function project with the following settings:
 * Language : Python
@@ -44,7 +44,7 @@ For example:
 "custom_vision_training_key": "4240...",
 "custom_vision_project_id": "2253..."
 ```
-## 3. Grant the Service Principal as "Storage Blob Data Reader" in Azure-Percept-SMM storage account (defined as "mm_storage_account").   
+## 3. Grant the Service Principal (AZURE_CLIENT_ID) as "Storage Blob Data Reader" in Azure Percept MM storage account (defined as "mm_storage_account").   
 
 ## 4. Add the following dependencies in requirements.txt:
 ```
@@ -137,6 +137,6 @@ def main(myblob: func.InputStream):
     os.remove(decrypted_file)
 ```
 
-## 7. Debug the project locally to make sure the retraining data can be fetched from the Azure-Percept-SMM storage blob, decrypted and uploaded to Custom Vision project as "Untagged" images.
+## 7. Debug the project locally to make sure the retraining data can be fetched from the Azure Percept MM storage blob, decrypted and uploaded to Custom Vision project as "Untagged" images.
 
 ## 8. Deploy the project to your Azure subscription and upload the local settings to cloud.
