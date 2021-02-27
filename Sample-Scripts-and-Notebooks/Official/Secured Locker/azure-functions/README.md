@@ -1,5 +1,7 @@
 # Using Azure Functions to decrypt and send retraining data to a Custom Vision project for retraining
 
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+
 This sample demonstrates how to create an Azure Function to decrypt the Azure-Percept-SMM retraining data and upload it to a Custom Vision project for model retraining. 
 
 ## Prerequisites
