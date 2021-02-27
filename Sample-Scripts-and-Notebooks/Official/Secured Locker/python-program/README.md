@@ -1,6 +1,6 @@
-# Using Azure-Percept-SMM Python SDK in your Python program
+# Using Azure Percept MM Python SDK in your Python program
 
-This sample program uses Azure-Percept-SMM Python SDK to preform a series of model operations:
+This sample program uses Azure Percept MM Python SDK to preform a series of model operations:
 > * Encryption (encrypts ```model.txt``` to ```model.txt.enc```)
 > * Decryption (decrypts ```model.txt.enc``` to ```model.decrypted.txt```)
 > * Upload (uploads ```model.txt.enc```)
