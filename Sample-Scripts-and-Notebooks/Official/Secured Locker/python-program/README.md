@@ -6,7 +6,7 @@ This sample program uses Azure Percept MM Python SDK to preform a series of mode
 > * Upload (uploads ```model.txt.enc```)
 > * Download (downloads to ``` downloaded.txt.enc``` and then decryptes to ```downloaded.decrypted.txt```)
 
-1.	Before testing, you need to update the environment variables ```AZURE_CLIENT_ID```, ```AZURE_CLIENT_SECRET``` and ```AZURE_TENANT_ID``` to match with your service principal credential. Then, you need to update the ```server_url``` to point to your Azure-Percept-SMM server endpoint. For example:
+1.	Before testing, you need to update app.py with the environment variables ```AZURE_CLIENT_ID```, ```AZURE_CLIENT_SECRET``` and ```AZURE_TENANT_ID``` to match with your service principal credential. Then, you need to update the ```server_url``` to point to your Azure-Percept-SMM server endpoint. For example:
     ```python
     os.environ["AZURE_CLIENT_ID"] = "555d..."
     os.environ["AZURE_CLIENT_SECRET"] = "6da3..."
