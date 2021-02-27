@@ -27,7 +27,7 @@ To run the sample, you need:
 "AZURE_TENANT_ID": "",
 "mm_server_url": "",
 "mm_storage_account": "",
-"mm_telemetry_storage_container": "",
+"mm_telemetry_storage_container": "data",
 "custom_vision_endpoint": "",
 "custom_vision_training_key": "",
 "custom_vision_project_id": ""
