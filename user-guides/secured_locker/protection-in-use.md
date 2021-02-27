@@ -1,5 +1,7 @@
 # AI model protection in use
 
+Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+
 Protecting AI models in use from rogue administrators and hackers is a challenging problem. The goal of Azure Percept MM is to enable in-depth AI model protection when the model is in use. The Azure Percept SDK uses authentication and authorization to make sure AI models are only invoked by authorized service accounts. You can also mount the decrypted models in memory to provide certain protections from other processes on the host. At the time of writing, Azure Percept MM doesn’t offer the capability to load models or inference code into trusted execution environments (TEE), but this feature may become available in a future version.
 
 ## Prevent unauthorized usages
