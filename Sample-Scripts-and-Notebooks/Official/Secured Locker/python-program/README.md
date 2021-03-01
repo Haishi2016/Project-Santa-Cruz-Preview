@@ -1,7 +1,5 @@
 # Using Azure Percept MM Python SDK in your Python program
 
-Azure Percept currently supports AI model protection as a preview feature.
-
 ```diff
 
 - **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
