@@ -1,6 +1,6 @@
 # Re-training 
 
-Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+Azure Percept currently supports AI model protection as a preview feature. 
 
 Azure Percept MM helps to you to trigger automatic re-training pipelines. Instead of creating its own telemetry collection system, Azure Percept MM is integrated with [OpenTelemetry]( https://opentelemetry.io/) that supports a big ecosystem of distributed tracing and metrics collection/analysis systems, including [Prometheus]( https://prometheus.io/), [Jaeger]( https://www.jaegertracing.io/), [Zipkin]( https://zipkin.io/), and many others. It also has SDKs in popular programming languages such as C#, Go and Python.
 
