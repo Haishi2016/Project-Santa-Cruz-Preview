@@ -1,11 +1,10 @@
 # Using Azure Percept MM Python SDK in your Python program
-
 ```diff
 
 - **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
 - Portions of this code base are subject to change without notice.
 ```
-Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals. You can also use this survey to sign up for future announcements.
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
 
 This sample program uses Azure Percept MM Python SDK to preform a series of model operations:
 > * Encryption (encrypts ```model.txt``` to ```model.txt.enc```)
