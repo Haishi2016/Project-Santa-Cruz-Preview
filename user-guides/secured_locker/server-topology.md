@@ -1,6 +1,10 @@
 # Topology
+```diff
 
-Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+- **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
+- Portions of this code base are subject to change without notice.
+```
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
 
 The Azure Percept MM service  runs as a single, stateless Docker container. This allows the service to be deployed and scaled on any hosting platforms where Docker containers are supported, including (but not limited to): [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/), [Azure Functions](https://azure.microsoft.com/en-us/services/functions/), [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service), and other [Kubernetes](https://kubernetes.io/) clusters.
 
