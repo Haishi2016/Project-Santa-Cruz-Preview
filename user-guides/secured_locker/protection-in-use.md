@@ -1,6 +1,12 @@
 # AI model protection in use
 
-Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+```diff
+
+- **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
+- Portions of this code base are subject to change without notice.
+```
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
+
 
 Protecting AI models in use from rogue administrators and hackers is a challenging problem. The goal of Azure Percept MM is to enable in-depth AI model protection when the model is in use. The Azure Percept SDK uses authentication and authorization to make sure AI models are only invoked by authorized service accounts. You can also mount the decrypted models in memory to provide certain protections from other processes on the host. At the time of writing, Azure Percept MM doesn’t offer the capability to load models or inference code into trusted execution environments (TEE), but this feature may become available in a future version.
 
@@ -18,7 +24,7 @@ Algorithms such as [differential privacy](https://www.microsoft.com/en-us/ai/ai-
 
 Sandboxed container runtimes such as [Kata](https://katacontainers.io/) and [gVisor](https://gvisor.dev/) offer strong isolations around container boundaries.
 
-> **NOTE:**  The Azure-Percept-SMM SDK works in OCI-compatible containers, so it should work with the above container runtimes, but they haven’t been explicitly tested.
+-> **NOTE:**  The Azure-Percept-SMM SDK works in OCI-compatible containers, so it should work with the above container runtimes, but -they haven’t been explicitly tested.
 
 ## Mount decrypted model to tmpfs
 
