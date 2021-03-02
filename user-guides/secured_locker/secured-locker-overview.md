@@ -1,6 +1,10 @@
 # Protecting your AI model and sensor data
+```diff
 
-Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+- **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
+- Portions of this code base are subject to change without notice.
+```
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
 
 Azure Percept provides AI model protection [at rest](protection-at-rest.md) and [in transit](protection-in-transit.md). It's designed to work with existing AI systems and workflows such as [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/), [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/), and [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/). The long-term goal of Azure Percept is to provide a unified experience across underlying systems.
 
