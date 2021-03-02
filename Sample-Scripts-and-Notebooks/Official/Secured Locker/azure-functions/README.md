@@ -4,7 +4,7 @@
 - **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
 - Portions of this code base are subject to change without notice.
 ```
-Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals. You can also use this survey to sign up for future announcements.
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
 
 This sample demonstrates how to create an Azure Function to decrypt the Azure Percept MM encrypted retraining data and upload it to a Custom Vision project for model retraining. 
 
