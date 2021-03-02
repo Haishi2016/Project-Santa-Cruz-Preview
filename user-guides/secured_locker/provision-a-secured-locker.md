@@ -1,6 +1,11 @@
 # Provision a new locker
 
-Azure Percept currently supports AI model protection as a preview feature. [Learn more](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/)
+```diff
+
+- **Please note!** Azure Percept currently supports AI model protection as a private preview feature.  
+- Portions of this code base are subject to change without notice.
+```
+Please consider taking our [Product survey](https://go.microsoft.com/fwlink/?linkid=2156573) to help us improve Azure Percept Model and Data Protection features based on your IoT Edge background and goals.
 
 Azure Percept MM relies on a number of Azure resources to operate (please see [topology](server-topology.md) for more details). To provision an instance on Azure, follow the steps outlined below.  
 
